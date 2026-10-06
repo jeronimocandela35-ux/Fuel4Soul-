@@ -1,984 +1,3662 @@
 <!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
 
-<html class="scroll-smooth" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Fuel4Soul — Small Steps. Deep Transformation.</title>
+
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary": "#5e5e8d",
-                        "primary-container": "#5e5e8d",
-                        "on-primary": "#ffffff",
-                        "secondary": "#a1c6c4",
-                        "secondary-container": "#e9f3f2",
-                        "on-secondary": "#1b1c1a",
-                        "background": "#efedea",
-                        "surface": "#ffffff",
-                        "surface-variant": "#f7f4f1",
-                        "on-surface": "#30312e",
-                        "on-surface-variant": "#5a5b57",
-                        "outline": "#adaccd",
-                        "outline-variant": "#dddbda",
-                        "brand-purple": "#5e5e8d",
-                        "nav-bg": "rgba(94, 94, 145, 0.9)"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "section-padding": "100px",
-                        "container-max": "1200px",
-                        "stack-sm": "8px",
-                        "stack-md": "16px",
-                        "stack-lg": "32px"
-                    },
-                    "fontFamily": {
-                        "body-md": ["KOLGIMBA", "sans-serif"],
-                        "label-sm": ["KOLGIMBA", "sans-serif"],
-                        "body-italic": ["CENTURY GOTHIC", "sans-serif"],
-                        "headline-xl": ["BANKS MILES SINGLE", "sans-serif"],
-                        "headline-lg": ["BANKS MILES SINGLE", "sans-serif"]
-                    }
-                },
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet"
+>
+
+<script>
+tailwind.config = {
+
+    darkMode: "class",
+
+    theme: {
+
+        extend: {
+
+            colors: {
+
+                primary: "#5e5e8d",
+                "primary-container": "#5e5e8d",
+                "on-primary": "#ffffff",
+
+                secondary: "#a1c6c4",
+                "secondary-container": "#e9f3f2",
+                "on-secondary": "#1b1c1a",
+
+                background: "#efedea",
+                surface: "#ffffff",
+                "surface-variant": "#f7f4f1",
+
+                "on-surface": "#30312e",
+                "on-surface-variant": "#5a5b57",
+
+                outline: "#adaccd",
+                "outline-variant": "#dddbda",
+
+                "brand-purple": "#5e5e8d",
+                "nav-bg": "rgba(94, 94, 145, 0.9)"
             },
+
+            borderRadius: {
+
+                DEFAULT: "0.25rem",
+                lg: "0.5rem",
+                xl: "0.75rem",
+                full: "9999px"
+            },
+
+            spacing: {
+
+                "section-padding": "100px",
+                "container-max": "1200px",
+                "stack-sm": "8px",
+                "stack-md": "16px",
+                "stack-lg": "32px"
+            },
+
+            fontFamily: {
+
+                "body-md": ["KOLGIMBA", "sans-serif"],
+                "label-sm": ["KOLGIMBA", "sans-serif"],
+                "body-italic": ["CENTURY GOTHIC", "sans-serif"],
+                "headline-xl": ["BANKS MILES SINGLE", "sans-serif"],
+                "headline-lg": ["BANKS MILES SINGLE", "sans-serif"]
+            }
         }
-    </script>
+    }
+}
+</script>
+
 <style>
-        @font-face {
-            font-family: 'KOLGIMBA' ;
-            src: local('KOLGIMBA'), local('KOLGIMBA Regular');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'BANKS MILES SINGLE';
-            src: local('BANKS MILES SINGLE'), local('Banks Miles Single Regular');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'CENTURY GOTHIC';
-            src: local('CENTURY GOTHIC'), local('CenturyGothic-Regular');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-            display: inline-block;
-            vertical-align: middle;
-        }
-        .hero-bg {
-            background-color: #5e5e91;
-            background-image: linear-gradient(135deg, rgba(94, 94, 145, 0.96), rgba(94, 94, 145, 0.96));
-        }
-        .soft-card-shadow {
-            box-shadow: 0 10px 30px rgba(94, 94, 141, 0.12);
-        }
-        .store-section {
-            background: linear-gradient(180deg, rgba(94, 94, 145, 0.04) 0%, rgba(94, 94, 145, 0.08) 100%);
-            position: relative;
-        }
-        .store-section::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at top right, rgba(161, 198, 196, 0.25), transparent 40%);
-            pointer-events: none;
-        }
-        .store-wrap {
-            position: relative;
-            z-index: 1;
-        }
-        .store-header {
-            display: flex;
-            align-items: end;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-        }
-        .store-header h2 {
-            margin: 0;
-        }
-        .store-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1rem;
-            border-radius: 999px;
-            background: rgba(94, 94, 145, 0.08);
-            color: #5e5e8d;
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-        }
-        .product-slider {
-            margin: 0 -18px;
-            position: relative;
-        }
-        .product-slider .slick-list {
-            overflow: hidden;
-            padding: 0.5rem 0 1.5rem;
-        }
-        .product-slider .slick-track {
-            display: flex;
-            align-items: stretch;
-        }
-        .product-slider .slick-slide {
-            padding: 0 18px;
-            height: auto;
-            display: flex;
-        }
-        .product-slider .slick-slide > div {
-            width: 100%;
-            display: flex;
-        }
-        .product-card {
-            width: 100%;
-            min-width: 0;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            background: rgba(255, 255, 255, 0.88);
-            border: 1px solid rgba(94, 94, 145, 0.08);
-            border-radius: 1.5rem;
-            overflow: hidden;
-            box-shadow: 0 24px 45px rgba(94, 94, 145, 0.09);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 60px rgba(94, 94, 145, 0.14);
-        }
-        .product-card .image-wrap {
-            position: relative;
-            aspect-ratio: 4 / 5;
-            overflow: hidden;
-            background: #f4f1fb;
-        }
-        .product-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.9s ease;
-        }
-        .product-card:hover img {
-            transform: scale(1.06);
-        }
-        .product-card .card-body {
-            display: flex;
-            flex: 1;
-            flex-direction: column;
-            padding: 1.5rem 1.25rem 1.25rem;
-        }
-        .product-card .product-tag {
-            display: inline-block;
-            margin-bottom: 0.65rem;
-            font-size: 0.62rem;
-            font-weight: 800;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: #5e5e8d;
-        }
-        .product-card h3 {
-            margin: 0 0 0.5rem;
-            font-size: clamp(1.3rem, 1.7vw, 1.85rem);
-            line-height: 1.15;
-            color: #2f2c3f;
-        }
-        .product-card p {
-            margin: 0;
-            color: #5a5b57;
-            line-height: 1.7;
-            font-size: 0.95rem;
-            flex: 1;
-        }
-        .product-card .meta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(94, 94, 145, 0.08);
-        }
-        .product-card .price {
-            font-size: 1.45rem;
-            font-weight: 800;
-            color: #5e5e8d;
-        }
-        .product-card .buy-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 2.8rem;
-            height: 2.8rem;
-            border-radius: 999px;
-            background: rgba(94, 94, 145, 0.1);
-            color: #5e5e8d;
-            border: none;
-            cursor: pointer;
-            transition: all 0.25s ease;
-        }
-        .product-card .buy-btn:hover {
-            background: #5e5e8d;
-            color: white;
-            transform: translateY(-1px);
-        }
-        .product-slider .slick-arrow {
-            width: 46px;
-            height: 46px;
-            z-index: 2;
-            background: rgba(94, 94, 145, 0.95);
-            border-radius: 999px;
-            box-shadow: 0 18px 24px rgba(94, 94, 145, 0.18);
-            transition: transform 0.2s ease, background 0.2s ease;
-        }
-        .product-slider .slick-arrow:hover {
-            transform: scale(1.04);
-            background: rgba(94, 94, 145, 1);
-        }
-        .product-slider .slick-arrow:before {
-            color: #fff;
-            font-size: 20px;
-            opacity: 1;
-            font-family: Arial, sans-serif;
-        }
-        .product-slider .slick-prev {
-            left: -12px;
-        }
-        .product-slider .slick-next {
-            right: -12px;
-        }
-        .product-slider .slick-dots {
-            bottom: -2px;
-        }
-        .product-slider .slick-dots li {
-            width: 11px;
-            height: 11px;
-            margin: 0 4px;
-        }
-        .product-slider .slick-dots li button {
-            width: 11px;
-            height: 11px;
-            padding: 0;
-        }
-        .product-slider .slick-dots li button:before {
-            color: rgba(94, 94, 145, 0.5);
-            font-size: 10px;
-            opacity: 1;
-        }
-        .product-slider .slick-dots li.slick-active button:before {
-            color: #5e5e8d;
-        }
-        @media (max-width: 640px) {
-            .store-header {
-                display: block;
-                margin-bottom: 1.5rem;
-            }
-            .store-tag {
-                margin-top: 0.75rem;
-            }
-            .product-card .card-body {
-                padding: 1.2rem 1rem 1rem;
-            }
-            .product-slider .slick-arrow {
-                display: none !important;
-            }
-        }
-        .nav-shell {
-            position: sticky;
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            z-index: 50;
-            display: grid;
-            grid-template-columns: auto 1fr auto;
-            align-items: center;
-            gap: 2.5rem;
-            margin: 0;
-            padding: 1.4rem 2.8rem;
-            background: rgba(94, 94, 145, 0.96);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-left: none;
-            border-right: none;
-            border-top: none;
-            border-radius: 0;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 10px 26px rgba(29, 27, 54, 0.14);
-            transition: all 0.25s ease;
-        }
-        .mobile-menu-toggle {
-            display: none;
-        }
-        .mobile-menu-panel {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: min(82vw, 320px);
-            height: 100vh;
-            background: rgba(94, 94, 145, 0.98);
-            box-shadow: -12px 0 30px rgba(29, 27, 54, 0.22);
-            padding: 1.25rem 1.1rem 1.5rem;
-            transform: translateX(105%);
-            transition: transform 0.3s ease;
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .mobile-menu-panel.is-open {
-            transform: translateX(0);
-        }
-        .mobile-menu-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(16, 16, 24, 0.35);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.25s ease;
-            z-index: 90;
-        }
-        .mobile-menu-overlay.is-visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .nav-shell.is-fixed {
-            box-shadow: 0 16px 32px rgba(29, 27, 54, 0.18);
-            background: rgba(94, 94, 145, 0.98);
-        }
-        .nav-menu {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 2.1rem 2.9rem;
-            width: 100%;
-        }
-        .nav-link {
-            position: relative;
-            font-size: 1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            transition: all 0.3s ease;
-            color: rgba(255, 255, 255, 0.92);
-            white-space: nowrap;
-        }
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -0.4rem;
-            width: 100%;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.9);
-            transform: scaleX(0);
-            transform-origin: center;
-            transition: transform 0.25s ease;
-        }
-        .nav-link:hover {
-            color: #ffffff;
-        }
-        .nav-link:hover::after,
-        .nav-link:focus-visible::after {
-            transform: scaleX(1);
-        }
-        .nav-button {
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            background: rgba(255, 255, 255, 0.06);
-            color: #ffffff;
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            padding: 1.3rem 2.4rem;
-            border-radius: 999px;
-            transition: all 0.25s ease;
-            white-space: nowrap;
-            justify-self: end;
-        }
-        .nav-button:hover {
-            background: #ffffff;
-            color: #5e5e91;
-            transform: translateY(-1px);
-        }
-        .founder-card img {
-            transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1);
-        }
-        .founder-card:hover img {
-            transform: translateY(-8px);
-        }
-        .hero-header {
-            position: relative;
-            width: 100%;
-            height: 620px;
-            min-height: 620px;
-            max-height: 620px;
-            overflow: hidden;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #5e5e91;
-        }
-        .hero-logo {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover;
-            object-position: center;
-            margin: 0;
-            image-rendering: high-quality;
-            image-rendering: crisp-edges;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        .hero-content {
-            padding-bottom: 6rem;
-        }
-        @keyframes fade-in-up {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-hero {
-            animation: fade-in-up 1.2s ease-out forwards;
-        }
-        .reveal-animate {
-            opacity: 0;
-            filter: blur(6px);
-            transform: translateY(26px) scale(0.98);
-            transition: opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
-                        transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
-                        filter 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-        .reveal-animate.is-visible {
-            opacity: 1;
-            filter: blur(0);
-            transform: translateY(0) scale(1);
-        }
-    </style>
+
+/* =========================================
+   FUENTES
+========================================= */
+
+@font-face {
+
+    font-family: "KOLGIMBA";
+
+    src:
+        local("KOLGIMBA"),
+        local("KOLGIMBA Regular");
+
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+
+    font-family: "BANKS MILES SINGLE";
+
+    src:
+        local("BANKS MILES SINGLE"),
+        local("Banks Miles Single Regular");
+
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+
+    font-family: "CENTURY GOTHIC";
+
+    src:
+        local("CENTURY GOTHIC"),
+        local("CenturyGothic-Regular");
+
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* =========================================
+   MATERIAL ICONS
+========================================= */
+
+.material-symbols-outlined {
+
+    font-variation-settings:
+        "FILL" 0,
+        "wght" 300,
+        "GRAD" 0,
+        "opsz" 24;
+
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero-bg {
+
+    background-color: #5e5e91;
+
+    background-image:
+        linear-gradient(
+            135deg,
+            rgba(94, 94, 145, 0.96),
+            rgba(94, 94, 145, 0.96)
+        );
+}
+
+.hero-header {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 620px;
+    min-height: 620px;
+    max-height: 620px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #5e5e91;
+}
+
+.hero-logo {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    margin: 0;
+
+    image-rendering: high-quality;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.nav-shell {
+
+    position: sticky;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    z-index: 50;
+
+    display: grid;
+
+    grid-template-columns: auto 1fr auto;
+
+    align-items: center;
+
+    gap: 2.5rem;
+
+    margin: 0;
+
+    padding: 1.4rem 2.8rem;
+
+    background: rgba(94, 94, 145, 0.96);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-left: none;
+    border-right: none;
+    border-top: none;
+
+    border-radius: 0;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 26px rgba(29, 27, 54, 0.14);
+
+    transition: all 0.25s ease;
+}
+
+.nav-shell.is-fixed {
+
+    box-shadow:
+        0 16px 32px rgba(29, 27, 54, 0.18);
+
+    background:
+        rgba(94, 94, 145, 0.98);
+}
+
+.nav-menu {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 2.1rem 2.9rem;
+
+    width: 100%;
+}
+
+.nav-link {
+
+    position: relative;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.18em;
+
+    transition: all 0.3s ease;
+
+    color: rgba(255, 255, 255, 0.92);
+
+    white-space: nowrap;
+}
+
+.nav-link::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -0.4rem;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        rgba(255, 255, 255, 0.9);
+
+    transform: scaleX(0);
+
+    transform-origin: center;
+
+    transition:
+        transform 0.25s ease;
+}
+
+.nav-link:hover {
+
+    color: #ffffff;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+
+    transform: scaleX(1);
+}
+
+.nav-button {
+
+    border:
+        1px solid rgba(255, 255, 255, 0.22);
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color: #ffffff;
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    padding: 1.3rem 2.4rem;
+
+    border-radius: 999px;
+
+    transition:
+        all 0.25s ease;
+
+    white-space: nowrap;
+
+    justify-self: end;
+}
+
+.nav-button:hover {
+
+    background: #ffffff;
+
+    color: #5e5e91;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+.mobile-menu-toggle {
+
+    display: none;
+}
+
+.hamburger-icon {
+
+    display: grid;
+    align-items: center;
+    gap: 0.28rem;
+
+    width: 1.2rem;
+    height: 1rem;
+}
+
+.hamburger-icon span {
+
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.96);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mobile-menu-panel {
+
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: min(82vw, 320px);
+
+    height: 100vh;
+
+    background:
+        rgba(94, 94, 145, 0.98);
+
+    box-shadow:
+        -12px 0 30px rgba(29, 27, 54, 0.22);
+
+    padding:
+        1.25rem 1.1rem 1.5rem;
+
+    transform:
+        translateX(105%);
+
+    transition:
+        transform 0.3s ease;
+
+    z-index: 100;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1rem;
+}
+
+.mobile-menu-panel.is-open {
+
+    transform:
+        translateX(0);
+}
+
+.mobile-menu-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(16, 16, 24, 0.35);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease;
+
+    z-index: 90;
+}
+
+.mobile-menu-overlay.is-visible {
+
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================
+   GENERAL CARDS
+========================================= */
+
+.soft-card-shadow {
+
+    box-shadow:
+        0 10px 30px rgba(94, 94, 141, 0.12);
+}
+
+.founder-card img {
+
+    transition:
+        transform 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.founder-card:hover img {
+
+    transform:
+        translateY(-8px);
+}
+
+
+/* =========================================
+   PRODUCT CAROUSEL
+========================================= */
+
+.product-carousel {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 1080px;
+
+    margin: 0 auto;
+
+    padding: 0 60px;
+}
+
+.product-carousel-window {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 2rem;
+}
+
+.product-carousel-track {
+
+    display: flex;
+
+    width: 100%;
+
+    transition:
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change:
+        transform;
+}
+
+.product-slide {
+
+    min-width: 100%;
+
+    width: 100%;
+
+    flex: 0 0 100%;
+
+    padding: 8px;
+}
+
+.product-card-modern {
+
+    width: 100%;
+
+    min-height: 570px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(300px, 0.9fr)
+        minmax(360px, 1.1fr);
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+    border:
+        1px solid rgba(94, 94, 145, 0.09);
+
+    border-radius: 2rem;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 24px 60px rgba(94, 94, 145, 0.12);
+}
+
+.product-image-wrap {
+
+    position: relative;
+
+    min-height: 570px;
+
+    overflow: hidden;
+
+    background:
+        #f4f1fb;
+}
+
+.product-image-wrap img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 1.1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.product-card-modern:hover
+.product-image-wrap img {
+
+    transform:
+        scale(1.045);
+}
+
+.product-number {
+
+    position: absolute;
+
+    top: 24px;
+    left: 24px;
+
+    padding: 9px 14px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    backdrop-filter:
+        blur(10px);
+
+    color:
+        #5e5e8d;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing:
+        0.18em;
+}
+
+.product-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding:
+        clamp(2rem, 5vw, 4.5rem);
+}
+
+.product-category {
+
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color:
+        #5e5e8d;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing:
+        0.2em;
+
+    line-height:
+        1.5;
+
+    text-transform:
+        uppercase;
+}
+
+.product-info h3 {
+
+    margin:
+        0 0 20px;
+
+    color:
+        #2f2c3f;
+
+    font-family:
+        "BANKS MILES SINGLE",
+        sans-serif;
+
+    font-size:
+        clamp(2.3rem, 4vw, 4rem);
+
+    line-height:
+        1;
+}
+
+.product-info p {
+
+    max-width:
+        440px;
+
+    margin:
+        0;
+
+    color:
+        #5a5b57;
+
+    font-size:
+        1.05rem;
+
+    line-height:
+        1.8;
+}
+
+.product-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-top:
+        40px;
+
+    padding-top:
+        25px;
+
+    border-top:
+        1px solid rgba(94, 94, 145, 0.1);
+}
+
+.product-price {
+
+    color:
+        #5e5e8d;
+
+    font-size:
+        1.8rem;
+
+    font-weight:
+        800;
+}
+
+.product-buy-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding:
+        14px 21px;
+
+    border:
+        0;
+
+    border-radius:
+        999px;
+
+    background:
+        #5e5e8d;
+
+    color:
+        white;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.16em;
+
+    text-transform:
+        uppercase;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.product-buy-button
+.material-symbols-outlined {
+
+    font-size:
+        18px;
+}
+
+.product-buy-button:hover {
+
+    background:
+        #4d4d79;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(94, 94, 145, 0.22);
+}
+
+
+/* =========================================
+   CAROUSEL ARROWS
+========================================= */
+
+.product-carousel-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    z-index: 5;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius:
+        999px;
+
+    background:
+        #5e5e8d;
+
+    color:
+        white;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 14px 30px rgba(94, 94, 145, 0.22);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.product-carousel-arrow:hover {
+
+    background:
+        #4d4d79;
+
+    box-shadow:
+        0 18px 35px rgba(94, 94, 145, 0.28);
+}
+
+.product-carousel-arrow:active {
+
+    transform:
+        translateY(-50%) scale(0.94);
+}
+
+.product-carousel-prev {
+
+    left: 0;
+}
+
+.product-carousel-next {
+
+    right: 0;
+}
+
+
+/* =========================================
+   CAROUSEL CONTROLS
+========================================= */
+
+.product-carousel-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 24px;
+
+    margin-top:
+        28px;
+}
+
+.product-dots {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.product-dot {
+
+    width: 8px;
+    height: 8px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(94, 94, 145, 0.25);
+
+    cursor:
+        pointer;
+
+    transition:
+        width 0.3s ease,
+        background 0.3s ease;
+}
+
+.product-dot.active {
+
+    width:
+        30px;
+
+    background:
+        #5e5e8d;
+}
+
+.product-progress {
+
+    width:
+        100px;
+
+    height:
+        3px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(94, 94, 145, 0.1);
+}
+
+.product-progress span {
+
+    display:
+        block;
+
+    width:
+        0%;
+
+    height:
+        100%;
+
+    border-radius:
+        inherit;
+
+    background:
+        #5e5e8d;
+}
+
+.product-auto-text {
+
+    color:
+        rgba(90, 91, 87, 0.65);
+
+    font-size:
+        9px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.12em;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes fade-in-up {
+
+    from {
+
+        opacity: 0;
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+.animate-hero {
+
+    animation:
+        fade-in-up 1.2s ease-out forwards;
+}
+
+.reveal-animate {
+
+    opacity: 0;
+
+    filter:
+        blur(6px);
+
+    transform:
+        translateY(26px) scale(0.98);
+
+    transition:
+        opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
+        transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
+        filter 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal-animate.is-visible {
+
+    opacity: 1;
+
+    filter:
+        blur(0);
+
+    transform:
+        translateY(0) scale(1);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .product-carousel {
+
+        padding:
+            0 48px;
+    }
+
+    .product-card-modern {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        min-height:
+            500px;
+    }
+
+    .product-image-wrap {
+
+        min-height:
+            500px;
+    }
+
+    .product-info {
+
+        padding:
+            2.5rem;
+    }
+
+    .product-info h3 {
+
+        font-size:
+            2.5rem;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hero-header {
+
+        height:
+            420px;
+
+        min-height:
+            420px;
+
+        max-height:
+            420px;
+    }
+
+    .nav-shell {
+
+        padding:
+            0.7rem 0.9rem;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .hero-header {
+
+        display:
+            none;
+    }
+
+    .nav-shell {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            auto 1fr auto;
+
+        align-items:
+            center;
+
+        gap:
+            0.75rem;
+
+        box-shadow:
+            none;
+
+        padding:
+            0.7rem 0.9rem;
+
+        background:
+            rgba(94, 94, 145, 0.98);
+    }
+
+    .nav-shell a.inline-flex {
+
+        justify-self:
+            start;
+    }
+
+    .nav-menu {
+
+        display:
+            none;
+    }
+
+    .nav-button {
+
+        display:
+            none;
+    }
+
+    .mobile-menu-toggle {
+
+        display:
+            inline-flex;
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+        justify-self:
+            end;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        background:
+            rgba(255, 255, 255, 0.08);
+
+        transition:
+            background 0.2s ease;
+
+        padding: 0;
+    }
+
+    .hamburger-icon {
+
+        width: 1.1rem;
+        height: 0.9rem;
+        gap: 0.22rem;
+    }
+
+    .mobile-menu-toggle:hover {
+
+        background:
+            rgba(255, 255, 255, 0.14);
+    }
+
+
+    /* PRODUCT MOBILE */
+
+    .product-carousel {
+
+        padding:
+            0;
+    }
+
+    .product-carousel-window {
+
+        border-radius:
+            1.5rem;
+    }
+
+    .product-slide {
+
+        padding:
+            4px;
+    }
+
+    .product-card-modern {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        min-height:
+            auto;
+
+        border-radius:
+            1.5rem;
+    }
+
+    .product-image-wrap {
+
+        min-height:
+            390px;
+
+        height:
+            390px;
+    }
+
+    .product-info {
+
+        padding:
+            1.7rem 1.5rem 1.5rem;
+    }
+
+    .product-category {
+
+        margin-bottom:
+            12px;
+
+        font-size:
+            8px;
+    }
+
+    .product-info h3 {
+
+        margin-bottom:
+            14px;
+
+        font-size:
+            2.1rem;
+    }
+
+    .product-info p {
+
+        font-size:
+            0.9rem;
+
+        line-height:
+            1.65;
+    }
+
+    .product-bottom {
+
+        margin-top:
+            28px;
+
+        padding-top:
+            18px;
+    }
+
+    .product-price {
+
+        font-size:
+            1.4rem;
+    }
+
+    .product-buy-button {
+
+        padding:
+            12px 16px;
+
+        font-size:
+            8px;
+    }
+
+    .product-carousel-arrow {
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+        top:
+            390px;
+    }
+
+    .product-carousel-prev {
+
+        left:
+            12px;
+    }
+
+    .product-carousel-next {
+
+        right:
+            12px;
+    }
+
+    .product-carousel-controls {
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            14px;
+    }
+
+    .product-auto-text {
+
+        width:
+            100%;
+
+        text-align:
+            center;
+    }
+}
+
+
+/* =========================================
+   PANTALLAS 4K
+========================================= */
+
+@media (min-width: 1800px) {
+
+    .hero-header {
+
+        height:
+            800px;
+
+        min-height:
+            800px;
+
+        max-height:
+            800px;
+    }
+
+    .hero-logo {
+
+        object-fit:
+            contain;
+
+        object-position:
+            center center;
+    }
+
+    .product-carousel {
+
+        max-width:
+            1250px;
+    }
+
+    .product-card-modern {
+
+        min-height:
+            650px;
+    }
+
+    .product-image-wrap {
+
+        min-height:
+            650px;
+    }
+
+    .product-info {
+
+        padding:
+            5rem;
+    }
+}
+
+
+/* =========================================
+   PANTALLAS PEQUEÑAS
+========================================= */
+
+@media (max-width: 420px) {
+
+    .nav-shell {
+
+        padding:
+            0.65rem 0.75rem;
+    }
+
+    .product-image-wrap {
+
+        height:
+            350px;
+
+        min-height:
+            350px;
+    }
+
+    .product-carousel-arrow {
+
+        top:
+            350px;
+    }
+}
+
+</style>
+
 </head>
-<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary/20">
-<!-- 01 · HERO & HEADER -->
-<header class="relative flex flex-col hero-bg text-[#efedea]" id="inicio" style="background-color: #5e5e91;">
-<div class="hero-header">
-    <img alt="Fuel4Soul Logo" class="hero-logo" src="logo org.png"/>
-</div>
 
-<nav class="nav-shell w-full px-4 py-4 md:py-6" style="background-color: rgba(94, 94, 145, 0.92); backdrop-filter: blur(10px);">
-    <a class="inline-flex items-center justify-center" href="#inicio" aria-label="Inicio">
-        <img alt="Fuel4Soul" class="h-10 md:h-14 w-auto object-contain" src="Logo Fondo morado.png"/>
-    </a>
 
-    <div class="nav-menu">
-        <a class="nav-link" href="#inicio">Inicio</a>
-        <a class="nav-link" href="#tienda">Tienda</a>
-        <a class="nav-link" href="#mision">Nuestra Misión</a>
-        <a class="nav-link" href="#historia">Nuestra Historia</a>
-        <a class="nav-link" href="#contacto">Contacto</a>
+<body
+    class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary/20"
+>
+
+
+<!-- =========================================
+     01 · HERO & HEADER
+========================================= -->
+
+<header
+    class="relative flex flex-col hero-bg text-[#efedea]"
+    id="inicio"
+    style="background-color:#5e5e91;"
+>
+
+    <div class="hero-header">
+
+        <img
+            alt="Fuel4Soul Logo"
+            class="hero-logo"
+            src="logo org.png"
+        >
+
     </div>
 
-    <button class="nav-button hidden md:inline-flex">Comprar</button>
-    <button class="mobile-menu-toggle inline-flex items-center justify-center rounded-full border border-white/20 text-white md:hidden" type="button" aria-label="Abrir menú" aria-expanded="false">
-        <span class="material-symbols-outlined text-3xl">menu</span>
-    </button>
-</nav>
+
+    <nav
+        class="nav-shell w-full px-4 py-4 md:py-6"
+        style="
+            background-color:rgba(94,94,145,0.92);
+            backdrop-filter:blur(10px);
+        "
+    >
+
+        <a
+            class="inline-flex items-center justify-center"
+            href="#inicio"
+            aria-label="Inicio"
+        >
+
+            <img
+                alt="Fuel4Soul"
+                class="h-10 md:h-14 w-auto object-contain"
+                src="Logo Fondo morado.png"
+            >
+
+        </a>
+
+
+        <div class="nav-menu">
+
+            <a class="nav-link" href="#inicio">
+                Inicio
+            </a>
+
+            <a class="nav-link" href="#tienda">
+                Tienda
+            </a>
+
+            <a class="nav-link" href="#mision">
+                Nuestra Misión
+            </a>
+
+            <a class="nav-link" href="#historia">
+                Nuestra Historia
+            </a>
+
+            <a class="nav-link" href="#contacto">
+                Contacto
+            </a>
+
+        </div>
+
+
+        <button
+            class="nav-button hidden md:inline-flex"
+            type="button"
+        >
+            Comprar
+        </button>
+
+
+        <button
+            class="mobile-menu-toggle inline-flex items-center justify-center rounded-full border border-white/20 text-white md:hidden"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+        >
+
+            <span class="hamburger-icon" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+
+        </button>
+
+    </nav>
+
 </header>
 
-<div class="mobile-menu-overlay" aria-hidden="true"></div>
-<div class="mobile-menu-panel md:hidden" aria-label="Menú móvil">
+
+<!-- =========================================
+     MOBILE MENU
+========================================= -->
+
+<div
+    class="mobile-menu-overlay"
+    aria-hidden="true"
+></div>
+
+
+<div
+    class="mobile-menu-panel md:hidden"
+    aria-label="Menú móvil"
+>
+
     <div class="flex items-center justify-between mb-2">
-        <img alt="Fuel4Soul" class="h-10 w-auto object-contain" src="Logo Fondo morado.png"/>
-        <button class="mobile-menu-close rounded-full border border-white/20 text-white p-2" type="button" aria-label="Cerrar menú">
-            <span class="material-symbols-outlined text-2xl">close</span>
+
+        <img
+            alt="Fuel4Soul"
+            class="h-10 w-auto object-contain"
+            src="Logo Fondo morado.png"
+        >
+
+        <button
+            class="mobile-menu-close rounded-full border border-white/20 text-white p-2"
+            type="button"
+            aria-label="Cerrar menú"
+        >
+
+            <span class="material-symbols-outlined text-2xl">
+                close
+            </span>
+
         </button>
+
     </div>
+
+
     <nav class="flex flex-col gap-3 mt-3">
-        <a class="nav-link block text-left py-2" href="#inicio">Inicio</a>
-        <a class="nav-link block text-left py-2" href="#tienda">Tienda</a>
-        <a class="nav-link block text-left py-2" href="#mision">Nuestra Misión</a>
-        <a class="nav-link block text-left py-2" href="#historia">Nuestra Historia</a>
-        <a class="nav-link block text-left py-2" href="#contacto">Contacto</a>
+
+        <a
+            class="nav-link block text-left py-2"
+            href="#inicio"
+        >
+            Inicio
+        </a>
+
+        <a
+            class="nav-link block text-left py-2"
+            href="#tienda"
+        >
+            Tienda
+        </a>
+
+        <a
+            class="nav-link block text-left py-2"
+            href="#mision"
+        >
+            Nuestra Misión
+        </a>
+
+        <a
+            class="nav-link block text-left py-2"
+            href="#historia"
+        >
+            Nuestra Historia
+        </a>
+
+        <a
+            class="nav-link block text-left py-2"
+            href="#contacto"
+        >
+            Contacto
+        </a>
+
     </nav>
-    <button class="nav-button w-full mt-auto">Comprar</button>
+
+
+    <button
+        class="nav-button w-full mt-auto"
+        type="button"
+    >
+        Comprar
+    </button>
+
 </div>
 
-<style>
-    @media (max-width: 768px) {
-        .hero-header {
-            height: 420px;
-            min-height: 420px;
-            max-height: 420px;
-        }
-    }
 
-    @media (max-width: 640px) {
-        .hero-header {
-            display: none;
-        }
+<!-- =========================================
+     02 · EL ESPEJO
+========================================= -->
 
-        .nav-shell {
-            display: grid;
-            grid-template-columns: auto 1fr auto;
-            align-items: center;
-            gap: 0.75rem;
-            box-shadow: none;
-            padding: 0.7rem 0.9rem;
-            background: rgba(94, 94, 145, 0.98);
-        }
+<section
+    class="py-24 bg-surface"
+    id="espejo"
+>
 
-        .nav-shell a.inline-flex {
-            justify-self: start;
-        }
+    <div
+        class="max-w-container-max mx-auto px-6 text-center"
+    >
 
-        .nav-menu {
-            display: none;
-        }
+        <h2
+            class="font-body-md text-4xl md:text-5xl text-on-surface mb-6"
+        >
+            ¿Te has sentido así?
+        </h2>
 
-        .nav-button {
-            display: none;
-        }
+        <p
+            class="text-on-surface-variant mb-20 max-w-xl mx-auto text-lg"
+        >
+            A veces el ruido exterior nos impide escuchar lo que realmente necesitamos.
+        </p>
 
-        .mobile-menu-toggle {
-            display: inline-flex;
-            width: 42px;
-            height: 42px;
-            justify-self: end;
-            background: rgba(255, 255, 255, 0.08);
-            transition: background 0.2s ease;
-        }
 
-        .mobile-menu-toggle:hover {
-            background: rgba(255, 255, 255, 0.14);
-        }
-    }
+        <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-10"
+        >
 
-    @media (max-width: 420px) {
-        .nav-shell {
-            padding: 0.65rem 0.75rem;
-        }
-    }
-</style>
-<!-- 02 · EL ESPEJO -->
-<section class="py-24 bg-surface" id="espejo">
-<div class="max-w-container-max mx-auto px-6 text-center transition-all duration-1000 opacity-0 translate-y-12 opacity-100 translate-y-0">
-<h2 class="font-body-md text-4xl md:text-5xl text-on-surface mb-6">¿Te has sentido así?</h2>
-<p class="text-on-surface-variant mb-20 max-w-xl mx-auto text-lg">A veces el ruido exterior nos impide escuchar lo que realmente necesitamos.</p>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-<div class="p-12 rounded-2xl soft-card-shadow transition-all hover:shadow-lg" style="background-color: #5e5e8d;">
-<p class="text-xl italic font-body-italic text-white leading-relaxed">"¿Das todo por los demás y al final del día no queda nada para ti?"</p>
-</div>
-<div class="p-12 rounded-2xl soft-card-shadow transition-all hover:shadow-lg" style="background-color: #a1c6c4;">
-<p class="text-xl italic font-body-italic text-on-surface leading-relaxed">"¿Sabes que algo tiene que cambiar, pero no sabes por dónde empezar?"</p>
-</div>
-<div class="p-12 rounded-2xl soft-card-shadow transition-all hover:shadow-lg" style="background-color: #adaccd;">
-<p class="text-xl italic font-body-italic text-on-surface leading-relaxed">"¿Llevas tiempo buscando algo que te ayude a volver a ti — de verdad?"</p>
-</div>
-</div>
-</div>
-</section>
-<!-- 03 · QUIÉNES SOMOS / PILARES -->
-<section class="py-section-padding bg-background" id="mision">
-<div class="max-w-container-max mx-auto px-6 transition-all duration-1000 opacity-0 translate-y-12 opacity-100 translate-y-0">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24">
-<div>
-<h2 class="font-headline-lg text-5xl md:text-6xl text-on-surface mb-10 leading-[1.1]">90 días para <br/><span class="text-primary italic font-medium">volver a ti.</span></h2>
-<p class="text-xl text-on-surface-variant leading-relaxed mb-10">
-                    En Fuel4Soul, creemos que el bienestar no es un destino, sino un hábito diario. Nuestra metodología se basa en 6 pilares fundamentales diseñados para nutrir tu alma de manera integral y acompañarte en cada paso de tu transformación.
+            <div
+                class="p-12 rounded-2xl soft-card-shadow transition-all hover:shadow-lg"
+                style="background-color:#5e5e8d;"
+            >
+
+                <p
+                    class="text-xl italic font-body-italic text-white leading-relaxed"
+                >
+                    "¿Das todo por los demás y al final del día no queda nada para ti?"
                 </p>
-<div class="flex items-center gap-6">
-<div class="flex -space-x-4">
-<div class="w-12 h-12 rounded-full border-4 border-background bg-secondary/40 shadow-sm"></div>
-<div class="w-12 h-12 rounded-full border-4 border-background bg-primary/40 shadow-sm"></div>
-<div class="w-12 h-12 rounded-full border-4 border-background bg-secondary/30 shadow-sm"></div>
-</div>
-<p class="text-[11px] font-bold uppercase tracking-[0.15em] text-on-surface-variant">Transformando vidas desde la fe y el autocuidado</p>
-</div>
-</div>
-<div class="rounded-2xl overflow-hidden shadow-2xl">
-<img alt="Meditation and peace" class="w-full h-full object-cover aspect-[4/3]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUxMXrlRtKJ1mklBTbeewCW0j5wx_LzAVY0VbryYu2jl7K22mO8gT9K6YrQ1OxQcjWhrhx7xHjM5eN3ZNCQ68AEz0vFJR8TqMmbzuPvFtk-Eb5YJAoAimXnBGpz_xe-KxhWVpWwTqkB2ireU80kfeBwv4eBNIoT1lzyTjgpslOblogL5bDlx9ake2tVDUyufOnnPVObAlMKjbAG41mB2-JkiU52W3Lu3BuTj10jAQFxMRfSMNrE7y8"/>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="p-10 bg-surface rounded-xl border border-outline-variant/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-<span class="material-symbols-outlined text-primary text-4xl mb-6">folded_hands</span>
-<h3 class="font-bold text-[12px] uppercase tracking-[0.25em] text-primary mb-3">Espíritu</h3>
-<p class="text-sm text-on-surface-variant leading-relaxed">Cultiva tu conexión con Dios y reconoce la esencia divina que habita en ti.</p>
-</div>
-<div class="p-10 bg-surface rounded-xl border border-outline-variant/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-<span class="material-symbols-outlined text-primary text-4xl mb-6">lightbulb</span>
-<h3 class="font-bold text-[12px] uppercase tracking-[0.25em] text-primary mb-3">Mente</h3>
-<p class="text-sm text-on-surface-variant leading-relaxed">Desarrolla claridad, enfoque consciente y una mentalidad renovada cada mañana.</p>
-</div>
-<div class="p-10 bg-surface rounded-xl border border-outline-variant/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-<span class="material-symbols-outlined text-primary text-4xl mb-6">favorite</span>
-<h3 class="font-bold text-[12px] uppercase tracking-[0.25em] text-primary mb-3">Emociones</h3>
-<p class="text-sm text-on-surface-variant leading-relaxed">Navega tus sentimientos con compasión hacia una sanación interior profunda.</p>
-</div>
-<div class="p-10 bg-surface rounded-xl border border-outline-variant/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-<span class="material-symbols-outlined text-primary text-4xl mb-6">self_care</span>
-<h3 class="font-bold text-[12px] uppercase tracking-[0.25em] text-primary mb-3">Cuerpo</h3>
-<p class="text-sm text-on-surface-variant leading-relaxed">Honra tu templo a través de hábitos de salud y un cuidado físico consciente.</p>
-</div>
-<div class="p-10 bg-surface rounded-xl border border-outline-variant/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-<span class="material-symbols-outlined text-primary text-4xl mb-6">auto_awesome</span>
-<h3 class="font-bold text-[12px] uppercase tracking-[0.25em] text-primary mb-3">Abundancia</h3>
-<p class="text-sm text-on-surface-variant leading-relaxed">Sintoniza con la prosperidad y la gratitud por todo lo que ya eres y tienes.</p>
-</div>
-<div class="p-10 bg-surface rounded-xl border border-outline-variant/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-<span class="material-symbols-outlined text-primary text-4xl mb-6">groups</span>
-<h3 class="font-bold text-[12px] uppercase tracking-[0.25em] text-primary mb-3">Relaciones</h3>
-<p class="text-sm text-on-surface-variant leading-relaxed">Construye vínculos sanos, establece límites y lidera desde el amor propio.</p>
-</div>
-</div>
-</div>
+
+            </div>
+
+
+            <div
+                class="p-12 rounded-2xl soft-card-shadow transition-all hover:shadow-lg"
+                style="background-color:#a1c6c4;"
+            >
+
+                <p
+                    class="text-xl italic font-body-italic text-on-surface leading-relaxed"
+                >
+                    "¿Sabes que algo tiene que cambiar, pero no sabes por dónde empezar?"
+                </p>
+
+            </div>
+
+
+            <div
+                class="p-12 rounded-2xl soft-card-shadow transition-all hover:shadow-lg"
+                style="background-color:#adaccd;"
+            >
+
+                <p
+                    class="text-xl italic font-body-italic text-on-surface leading-relaxed"
+                >
+                    "¿Llevas tiempo buscando algo que te ayude a volver a ti — de verdad?"
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
-<!-- 04 · PRODUCTOS -->
-<section class="py-section-padding bg-surface-variant/20" id="tienda">
-<div class="max-w-container-max mx-auto px-6 transition-all duration-1000 opacity-0 translate-y-12 opacity-100 translate-y-0">
-<h2 class="font-headline-lg text-4xl text-center mb-20">Herramientas para tu proceso</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<!-- Reconecta -->
-<div class="bg-surface rounded-2xl overflow-hidden soft-card-shadow group flex flex-col h-full transition-all duration-500 hover:-translate-y-2">
-<div class="aspect-[4/5] overflow-hidden">
-<img alt="Reconecta Journal" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="reconecta.png"/>
-</div>
-<div class="p-8 flex flex-col flex-grow">
-<h3 class="font-headline-lg text-xl mb-1">Reconecta</h3>
-<p class="text-[10px] uppercase tracking-widest font-bold text-primary mb-4">Diario de Bienestar Integral</p>
-<p class="text-sm text-on-surface-variant mb-6 flex-grow leading-relaxed">Guía de 90 días para equilibrar tus 6 pilares. Incluye trackers de hábitos y reflexiones diarias.</p>
-<div class="flex justify-between items-center mt-auto pt-6 border-t border-outline-variant/10">
-<span class="text-primary font-bold text-lg">$35.00</span>
-<button class="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-all">
-<span class="material-symbols-outlined text-xl">shopping_bag</span>
-</button>
-</div>
-</div>
-</div>
-<!-- 90 Semillas -->
-<div class="bg-surface rounded-2xl overflow-hidden soft-card-shadow group flex flex-col h-full transition-all duration-500 hover:-translate-y-2">
-<div class="aspect-[4/5] overflow-hidden">
-<img alt="90 Semillas Cards" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="90 semillas.png"/>
-</div>
-<div class="p-8 flex flex-col flex-grow">
-<h3 class="font-headline-lg text-xl mb-1">90 Semillas</h3>
-<p class="text-[10px] uppercase tracking-widest font-bold text-primary mb-4">Tarjetas de Bienestar Integral</p>
-<p class="text-sm text-on-surface-variant mb-6 flex-grow leading-relaxed">90 tarjetas de inspiración diaria para nutrir tu mente y espíritu en cualquier momento.</p>
-<div class="flex justify-between items-center mt-auto pt-6 border-t border-outline-variant/10">
-<span class="text-primary font-bold text-lg">$28.00</span>
-<button class="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-all">
-<span class="material-symbols-outlined text-xl">shopping_bag</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Walk With Him -->
-<div class="bg-surface rounded-2xl overflow-hidden soft-card-shadow group flex flex-col h-full transition-all duration-500 hover:-translate-y-2">
-<div class="aspect-[4/5] overflow-hidden">
-<img alt="Walk With Him" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="caratula espiritual.png"/>
-</div>
-<div class="p-8 flex flex-col flex-grow">
-<h3 class="font-headline-lg text-xl mb-1">Walk With Him</h3>
-<p class="text-[10px] uppercase tracking-widest font-bold text-primary mb-4">Diario Espiritual</p>
-<p class="text-sm text-on-surface-variant mb-6 flex-grow leading-relaxed">Un espacio sagrado para documentar tu caminar con Dios. Reflexiones bíblicas y guía de oración.</p>
-<div class="flex justify-between items-center mt-auto pt-6 border-t border-outline-variant/10">
-<span class="text-primary font-bold text-lg">$35.00</span>
-<button class="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-all">
-<span class="material-symbols-outlined text-xl">shopping_bag</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Semillas de Fe -->
-<div class="bg-surface rounded-2xl overflow-hidden soft-card-shadow group flex flex-col h-full transition-all duration-500 hover:-translate-y-2">
-<div class="aspect-[4/5] overflow-hidden">
-<img alt="Semillas de Fe" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="caratula semillas de fe.png"/>
-</div>
-<div class="p-8 flex flex-col flex-grow">
-<h3 class="font-headline-lg text-xl mb-1">Semillas de Fe</h3>
-<p class="text-[10px] uppercase tracking-widest font-bold text-primary mb-4">Tarjetas Espirituales</p>
-<p class="text-sm text-on-surface-variant mb-6 flex-grow leading-relaxed">Colección de tarjetas con promesas bíblicas para fortalecer tu espíritu en tiempos difíciles.</p>
-<div class="flex justify-between items-center mt-auto pt-6 border-t border-outline-variant/10">
-<span class="text-primary font-bold text-lg">$28.00</span>
-<button class="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-all">
-<span class="material-symbols-outlined text-xl">shopping_bag</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+
+<!-- =========================================
+     03 · MISIÓN / PILARES
+========================================= -->
+
+<section
+    class="py-section-padding bg-background"
+    id="mision"
+>
+
+    <div class="max-w-container-max mx-auto px-6">
+
+        <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24"
+        >
+
+            <div>
+
+                <h2
+                    class="font-headline-lg text-5xl md:text-6xl text-on-surface mb-10 leading-[1.1]"
+                >
+                    90 días para
+                    <br>
+                    <span class="text-primary italic font-medium">
+                        volver a ti.
+                    </span>
+                </h2>
+
+
+                <p
+                    class="text-xl text-on-surface-variant leading-relaxed mb-10"
+                >
+                    En Fuel4Soul, creemos que el bienestar no es un destino,
+                    sino un hábito diario. Nuestra metodología se basa en
+                    6 pilares fundamentales diseñados para nutrir tu alma
+                    de manera integral y acompañarte en cada paso de tu transformación.
+                </p>
+
+
+                <div class="flex items-center gap-6">
+
+                    <div class="flex -space-x-4">
+
+                        <div
+                            class="w-12 h-12 rounded-full border-4 border-background bg-secondary/40 shadow-sm"
+                        ></div>
+
+                        <div
+                            class="w-12 h-12 rounded-full border-4 border-background bg-primary/40 shadow-sm"
+                        ></div>
+
+                        <div
+                            class="w-12 h-12 rounded-full border-4 border-background bg-secondary/30 shadow-sm"
+                        ></div>
+
+                    </div>
+
+
+                    <p
+                        class="text-[11px] font-bold uppercase tracking-[0.15em] text-on-surface-variant"
+                    >
+                        Transformando vidas desde la fe y el autocuidado
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="rounded-2xl overflow-hidden shadow-2xl">
+
+                <img
+                    alt="Meditation and peace"
+                    class="w-full h-full object-cover aspect-[4/3]"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUxMXrlRtKJ1mklBTbeewCW0j5wx_LzAVY0VbryYu2jl7K22mO8gT9K6YrQ1OxQcjWhrhx7xHjM5eN3ZNCQ68AEz0vFJR8TqMmbzuPvFtk-Eb5YJAoAimXnBGpz_xe-KxhWVpWwTqkB2ireU80kfeBwv4eBNIoT1lzyTjgpslOblogL5bDlx9ake2tVDUyufOnnPVObAlMKjbAG41mB2-JkiU52W3Lu3BuTj10jAQFxMRfSMNrE7y8"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+
+            <div class="p-10 bg-surface rounded-xl border border-outline-variant/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+
+                <span class="material-symbols-outlined text-primary text-4xl mb-6">
+                    folded_hands
+                </span>
+
+                <h3 class="font-bold text-[12px] uppercase tracking-[0.25em] text-primary mb-3">
+                    Espíritu
+                </h3>
+
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                    Cultiva tu conexión con Dios y reconoce la esencia divina que habita en ti.
+                </p>
+
+            </div>
+
+
+            <div class="p-10 bg-surface rounded-xl border border-outline-variant/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+
+                <span class="material-symbols-outlined text-primary text-4xl mb-6">
+                    lightbulb
+                </span>
+
+                <h3 class="font-bold text-[12px] uppercase tracking-[0.25em] text-primary mb-3">
+                    Mente
+                </h3>
+
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                    Desarrolla claridad, enfoque consciente y una mentalidad renovada cada mañana.
+                </p>
+
+            </div>
+
+
+            <div class="p-10 bg-surface rounded-xl border border-outline-variant/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+
+                <span class="material-symbols-outlined text-primary text-4xl mb-6">
+                    favorite
+                </span>
+
+                <h3 class="font-bold text-[12px] uppercase tracking-[0.25em] text-primary mb-3">
+                    Emociones
+                </h3>
+
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                    Navega tus sentimientos con compasión hacia una sanación interior profunda.
+                </p>
+
+            </div>
+
+
+            <div class="p-10 bg-surface rounded-xl border border-outline-variant/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+
+                <span class="material-symbols-outlined text-primary text-4xl mb-6">
+                    self_care
+                </span>
+
+                <h3 class="font-bold text-[12px] uppercase tracking-[0.25em] text-primary mb-3">
+                    Cuerpo
+                </h3>
+
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                    Honra tu templo a través de hábitos de salud y un cuidado físico consciente.
+                </p>
+
+            </div>
+
+
+            <div class="p-10 bg-surface rounded-xl border border-outline-variant/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+
+                <span class="material-symbols-outlined text-primary text-4xl mb-6">
+                    auto_awesome
+                </span>
+
+                <h3 class="font-bold text-[12px] uppercase tracking-[0.25em] text-primary mb-3">
+                    Abundancia
+                </h3>
+
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                    Sintoniza con la prosperidad y la gratitud por todo lo que ya eres y tienes.
+                </p>
+
+            </div>
+
+
+            <div class="p-10 bg-surface rounded-xl border border-outline-variant/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+
+                <span class="material-symbols-outlined text-primary text-4xl mb-6">
+                    groups
+                </span>
+
+                <h3 class="font-bold text-[12px] uppercase tracking-[0.25em] text-primary mb-3">
+                    Relaciones
+                </h3>
+
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                    Construye vínculos sanos, establece límites y lidera desde el amor propio.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
-<!-- 05 · TABLA COMPARATIVA -->
+
+
+<!-- =========================================
+     04 · PRODUCTOS
+     CARRUSEL
+========================================= -->
+
+<section
+    class="py-section-padding bg-surface-variant/20"
+    id="tienda"
+>
+
+    <div class="max-w-container-max mx-auto px-6">
+
+
+        <div class="store-header">
+
+            <div>
+
+                <span class="store-tag">
+                    <span class="material-symbols-outlined text-base">
+                        auto_awesome
+                    </span>
+
+                    Nuestras herramientas
+                </span>
+
+
+                <h2
+                    class="font-headline-lg text-4xl md:text-5xl mt-5"
+                >
+                    Herramientas para tu proceso
+                </h2>
+
+
+                <p
+                    class="text-on-surface-variant mt-4 max-w-xl text-base md:text-lg"
+                >
+                    Elige la herramienta que mejor acompañe tu camino de transformación.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="product-carousel"
+            id="productCarousel"
+        >
+
+
+            <!-- FLECHA IZQUIERDA -->
+
+            <button
+                class="product-carousel-arrow product-carousel-prev"
+                type="button"
+                aria-label="Producto anterior"
+                id="productPrev"
+            >
+
+                <span class="material-symbols-outlined">
+                    arrow_back
+                </span>
+
+            </button>
+
+
+            <!-- VENTANA -->
+
+            <div class="product-carousel-window">
+
+
+                <!-- TRACK -->
+
+                <div
+                    class="product-carousel-track"
+                    id="productTrack"
+                >
+
+
+                    <!-- PRODUCTO 1 -->
+
+                    <article class="product-slide">
+
+                        <div class="product-card-modern">
+
+
+                            <div class="product-image-wrap">
+
+                                <img
+                                    src="reconecta.png"
+                                    alt="Reconecta Journal"
+                                    loading="lazy"
+                                >
+
+                                <span class="product-number">
+                                    01 / 04
+                                </span>
+
+                            </div>
+
+
+                            <div class="product-info">
+
+                                <div>
+
+                                    <span class="product-category">
+                                        Diario de Bienestar Integral
+                                    </span>
+
+
+                                    <h3>
+                                        Reconecta
+                                    </h3>
+
+
+                                    <p>
+                                        Guía de 90 días para equilibrar tus 6 pilares.
+                                        Incluye trackers de hábitos y reflexiones diarias.
+                                    </p>
+
+                                </div>
+
+
+                                <div class="product-bottom">
+
+                                    <span class="product-price">
+                                        $35.00
+                                    </span>
+
+
+                                    <button
+                                        class="product-buy-button"
+                                        type="button"
+                                    >
+
+                                        Comprar
+
+                                        <span class="material-symbols-outlined">
+                                            arrow_forward
+                                        </span>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO 2 -->
+
+                    <article class="product-slide">
+
+                        <div class="product-card-modern">
+
+
+                            <div class="product-image-wrap">
+
+                                <img
+                                    src="90 semillas.png"
+                                    alt="90 Semillas Cards"
+                                    loading="lazy"
+                                >
+
+                                <span class="product-number">
+                                    02 / 04
+                                </span>
+
+                            </div>
+
+
+                            <div class="product-info">
+
+                                <div>
+
+                                    <span class="product-category">
+                                        Tarjetas de Bienestar Integral
+                                    </span>
+
+
+                                    <h3>
+                                        90 Semillas
+                                    </h3>
+
+
+                                    <p>
+                                        90 tarjetas de inspiración diaria para nutrir
+                                        tu mente y espíritu en cualquier momento.
+                                    </p>
+
+                                </div>
+
+
+                                <div class="product-bottom">
+
+                                    <span class="product-price">
+                                        $28.00
+                                    </span>
+
+
+                                    <button
+                                        class="product-buy-button"
+                                        type="button"
+                                    >
+
+                                        Comprar
+
+                                        <span class="material-symbols-outlined">
+                                            arrow_forward
+                                        </span>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO 3 -->
+
+                    <article class="product-slide">
+
+                        <div class="product-card-modern">
+
+
+                            <div class="product-image-wrap">
+
+                                <img
+                                    src="caratula espiritual.png"
+                                    alt="Walk With Him"
+                                    loading="lazy"
+                                >
+
+                                <span class="product-number">
+                                    03 / 04
+                                </span>
+
+                            </div>
+
+
+                            <div class="product-info">
+
+                                <div>
+
+                                    <span class="product-category">
+                                        Diario Espiritual
+                                    </span>
+
+
+                                    <h3>
+                                        Walk With Him
+                                    </h3>
+
+
+                                    <p>
+                                        Un espacio sagrado para documentar tu caminar
+                                        con Dios. Reflexiones bíblicas y guía de oración.
+                                    </p>
+
+                                </div>
+
+
+                                <div class="product-bottom">
+
+                                    <span class="product-price">
+                                        $35.00
+                                    </span>
+
+
+                                    <button
+                                        class="product-buy-button"
+                                        type="button"
+                                    >
+
+                                        Comprar
+
+                                        <span class="material-symbols-outlined">
+                                            arrow_forward
+                                        </span>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO 4 -->
+
+                    <article class="product-slide">
+
+                        <div class="product-card-modern">
+
+
+                            <div class="product-image-wrap">
+
+                                <img
+                                    src="caratula semillas de fe.png"
+                                    alt="Semillas de Fe"
+                                    loading="lazy"
+                                >
+
+                                <span class="product-number">
+                                    04 / 04
+                                </span>
+
+                            </div>
+
+
+                            <div class="product-info">
+
+                                <div>
+
+                                    <span class="product-category">
+                                        Tarjetas Espirituales
+                                    </span>
+
+
+                                    <h3>
+                                        Semillas de Fe
+                                    </h3>
+
+
+                                    <p>
+                                        Colección de tarjetas con promesas bíblicas
+                                        para fortalecer tu espíritu en tiempos difíciles.
+                                    </p>
+
+                                </div>
+
+
+                                <div class="product-bottom">
+
+                                    <span class="product-price">
+                                        $28.00
+                                    </span>
+
+
+                                    <button
+                                        class="product-buy-button"
+                                        type="button"
+                                    >
+
+                                        Comprar
+
+                                        <span class="material-symbols-outlined">
+                                            arrow_forward
+                                        </span>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- FLECHA DERECHA -->
+
+            <button
+                class="product-carousel-arrow product-carousel-next"
+                type="button"
+                aria-label="Siguiente producto"
+                id="productNext"
+            >
+
+                <span class="material-symbols-outlined">
+                    arrow_forward
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- CONTROLES -->
+
+        <div class="product-carousel-controls">
+
+
+            <div
+                class="product-dots"
+                id="productDots"
+            >
+
+                <button
+                    class="product-dot active"
+                    type="button"
+                    aria-label="Ir al producto 1"
+                ></button>
+
+                <button
+                    class="product-dot"
+                    type="button"
+                    aria-label="Ir al producto 2"
+                ></button>
+
+                <button
+                    class="product-dot"
+                    type="button"
+                    aria-label="Ir al producto 3"
+                ></button>
+
+                <button
+                    class="product-dot"
+                    type="button"
+                    aria-label="Ir al producto 4"
+                ></button>
+
+            </div>
+
+
+            <div class="product-progress">
+
+                <span id="productProgress"></span>
+
+            </div>
+
+
+            <span class="product-auto-text">
+                Cambio automático · 15 segundos
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     05 · TABLA COMPARATIVA
+========================================= -->
+
 <section class="py-32 bg-surface">
-<div class="max-w-4xl mx-auto px-6 transition-all duration-1000 opacity-0 translate-y-12 opacity-100 translate-y-0">
-<h2 class="font-headline-lg text-4xl text-center mb-16">Compara nuestras herramientas</h2>
-<div class="overflow-x-auto rounded-xl border border-outline-variant/20">
-<table class="w-full text-left border-collapse">
-<thead>
-<tr class="border-b border-outline-variant/20 text-[11px] font-bold uppercase tracking-[0.25em] text-primary bg-background/50">
-<th class="py-8 px-8">Producto</th>
-<th class="py-8 px-8">Enfoque</th>
-<th class="py-8 px-8">Duración</th>
-<th class="py-8 px-8">Precio</th>
-</tr>
-</thead>
-<tbody class="text-sm text-on-surface-variant">
-<tr class="border-b border-outline-variant/10 hover:bg-background/40 transition-colors">
-<td class="py-8 px-8 font-bold text-on-surface">Reconecta</td>
-<td class="py-8 px-8">Bienestar Integral (6 Pilares)</td>
-<td class="py-8 px-8">90 días de guía</td>
-<td class="py-8 px-8 font-semibold text-primary">$35.00</td>
-</tr>
-<tr class="border-b border-outline-variant/10 hover:bg-background/40 transition-colors">
-<td class="py-8 px-8 font-bold text-on-surface">90 Semillas</td>
-<td class="py-8 px-8">Inspiración Diaria / Mente</td>
-<td class="py-8 px-8">Continuo / Versátil</td>
-<td class="py-8 px-8 font-semibold text-primary">$28.00</td>
-</tr>
-<tr class="hover:bg-background/40 transition-colors">
-<td class="py-8 px-8 font-bold text-on-surface">Walk With Him</td>
-<td class="py-8 px-8">Fe y Propósito Espiritual</td>
-<td class="py-8 px-8">Diario Guiado</td>
-<td class="py-8 px-8 font-semibold text-primary">$35.00</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+
+    <div class="max-w-4xl mx-auto px-6">
+
+        <h2
+            class="font-headline-lg text-4xl text-center mb-16"
+        >
+            Compara nuestras herramientas
+        </h2>
+
+
+        <div
+            class="overflow-x-auto rounded-xl border border-outline-variant/20"
+        >
+
+            <table class="w-full text-left border-collapse">
+
+                <thead>
+
+                    <tr
+                        class="border-b border-outline-variant/20 text-[11px] font-bold uppercase tracking-[0.25em] text-primary bg-background/50"
+                    >
+
+                        <th class="py-8 px-8">
+                            Producto
+                        </th>
+
+                        <th class="py-8 px-8">
+                            Enfoque
+                        </th>
+
+                        <th class="py-8 px-8">
+                            Duración
+                        </th>
+
+                        <th class="py-8 px-8">
+                            Precio
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody
+                    class="text-sm text-on-surface-variant"
+                >
+
+                    <tr
+                        class="border-b border-outline-variant/10 hover:bg-background/40 transition-colors"
+                    >
+
+                        <td class="py-8 px-8 font-bold text-on-surface">
+                            Reconecta
+                        </td>
+
+                        <td class="py-8 px-8">
+                            Bienestar Integral (6 Pilares)
+                        </td>
+
+                        <td class="py-8 px-8">
+                            90 días de guía
+                        </td>
+
+                        <td class="py-8 px-8 font-semibold text-primary">
+                            $35.00
+                        </td>
+
+                    </tr>
+
+
+                    <tr
+                        class="border-b border-outline-variant/10 hover:bg-background/40 transition-colors"
+                    >
+
+                        <td class="py-8 px-8 font-bold text-on-surface">
+                            90 Semillas
+                        </td>
+
+                        <td class="py-8 px-8">
+                            Inspiración Diaria / Mente
+                        </td>
+
+                        <td class="py-8 px-8">
+                            Continuo / Versátil
+                        </td>
+
+                        <td class="py-8 px-8 font-semibold text-primary">
+                            $28.00
+                        </td>
+
+                    </tr>
+
+
+                    <tr
+                        class="hover:bg-background/40 transition-colors"
+                    >
+
+                        <td class="py-8 px-8 font-bold text-on-surface">
+                            Walk With Him
+                        </td>
+
+                        <td class="py-8 px-8">
+                            Fe y Propósito Espiritual
+                        </td>
+
+                        <td class="py-8 px-8">
+                            Diario Guiado
+                        </td>
+
+                        <td class="py-8 px-8 font-semibold text-primary">
+                            $35.00
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
 </section>
-<!-- 06 · CÓMO FUNCIONA -->
-<section class="py-32 bg-brand-purple text-white relative overflow-hidden">
-<div class="max-w-container-max mx-auto px-6 relative z-10 transition-all duration-1000 opacity-0 translate-y-12 opacity-100 translate-y-0">
-<h2 class="font-headline-lg text-5xl text-center mb-24">Tu camino de transformación</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-20 relative">
-<div class="hidden md:block absolute top-12 left-[15%] right-[15%] h-px bg-white/10 -z-0"></div>
-<div class="relative z-10 text-center space-y-8">
-<div class="w-20 h-20 bg-white text-brand-purple rounded-full flex items-center justify-center font-bold text-2xl mx-auto shadow-2xl border-4 border-white/20">1</div>
-<h3 class="font-headline-lg text-2xl italic">Abre</h3>
-<p class="text-base opacity-80 leading-relaxed max-w-[280px] mx-auto">Comienza tu día dedicando un espacio sagrado para ti. Elige tu herramienta y conecta.</p>
-</div>
-<div class="relative z-10 text-center space-y-8">
-<div class="w-20 h-20 bg-white text-brand-purple rounded-full flex items-center justify-center font-bold text-2xl mx-auto shadow-2xl border-4 border-white/20">2</div>
-<h3 class="font-headline-lg text-2xl italic">Reflexiona</h3>
-<p class="text-base opacity-80 leading-relaxed max-w-[280px] mx-auto">Sigue las guías y deja que las semillas de sabiduría echen raíces en tu interior.</p>
-</div>
-<div class="relative z-10 text-center space-y-8">
-<div class="w-20 h-20 bg-white text-brand-purple rounded-full flex items-center justify-center font-bold text-2xl mx-auto shadow-2xl border-4 border-white/20">3</div>
-<h3 class="font-headline-lg text-2xl italic">Actúa</h3>
-<p class="text-base opacity-80 leading-relaxed max-w-[280px] mx-auto">Lleva lo aprendido a tu realidad diaria y observa cómo florece tu transformación.</p>
-</div>
-</div>
-</div>
+
+
+<!-- =========================================
+     06 · CÓMO FUNCIONA
+========================================= -->
+
+<section
+    class="py-32 bg-brand-purple text-white relative overflow-hidden"
+>
+
+    <div
+        class="max-w-container-max mx-auto px-6 relative z-10"
+    >
+
+        <h2
+            class="font-headline-lg text-5xl text-center mb-24"
+        >
+            Tu camino de transformación
+        </h2>
+
+
+        <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-20 relative"
+        >
+
+            <div
+                class="hidden md:block absolute top-12 left-[15%] right-[15%] h-px bg-white/10 -z-0"
+            ></div>
+
+
+            <div
+                class="relative z-10 text-center space-y-8"
+            >
+
+                <div
+                    class="w-20 h-20 bg-white text-brand-purple rounded-full flex items-center justify-center font-bold text-2xl mx-auto shadow-2xl border-4 border-white/20"
+                >
+                    1
+                </div>
+
+                <h3
+                    class="font-headline-lg text-2xl italic"
+                >
+                    Abre
+                </h3>
+
+                <p
+                    class="text-base opacity-80 leading-relaxed max-w-[280px] mx-auto"
+                >
+                    Comienza tu día dedicando un espacio sagrado para ti.
+                    Elige tu herramienta y conecta.
+                </p>
+
+            </div>
+
+
+            <div
+                class="relative z-10 text-center space-y-8"
+            >
+
+                <div
+                    class="w-20 h-20 bg-white text-brand-purple rounded-full flex items-center justify-center font-bold text-2xl mx-auto shadow-2xl border-4 border-white/20"
+                >
+                    2
+                </div>
+
+                <h3
+                    class="font-headline-lg text-2xl italic"
+                >
+                    Reflexiona
+                </h3>
+
+                <p
+                    class="text-base opacity-80 leading-relaxed max-w-[280px] mx-auto"
+                >
+                    Sigue las guías y deja que las semillas de sabiduría
+                    echen raíces en tu interior.
+                </p>
+
+            </div>
+
+
+            <div
+                class="relative z-10 text-center space-y-8"
+            >
+
+                <div
+                    class="w-20 h-20 bg-white text-brand-purple rounded-full flex items-center justify-center font-bold text-2xl mx-auto shadow-2xl border-4 border-white/20"
+                >
+                    3
+                </div>
+
+                <h3
+                    class="font-headline-lg text-2xl italic"
+                >
+                    Actúa
+                </h3>
+
+                <p
+                    class="text-base opacity-80 leading-relaxed max-w-[280px] mx-auto"
+                >
+                    Lleva lo aprendido a tu realidad diaria y observa
+                    cómo florece tu transformación.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
-<!-- 07 · FUNDADORAS -->
-<section class="py-section-padding bg-background" id="historia">
-<div class="max-w-container-max mx-auto px-6 transition-all duration-1000 opacity-0 translate-y-12 opacity-100 translate-y-0">
-<div class="text-center mb-24">
-<h2 class="font-headline-lg text-5xl mb-6">Las Fundadoras</h2>
-<p class="text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed">Cuatro mujeres unidas por el propósito de crear un refugio para el alma en el mundo moderno.</p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-<!-- Founder 1 -->
-<div class="text-center group founder-card">
-<div class="aspect-[4/5] rounded-2xl overflow-hidden mb-8 shadow-xl relative bg-surface">
-<img alt="Diana Villaveces" class="w-full h-full object-cover" src="DianaV.jpg"/>
-</div>
-<h4 class="font-headline-lg text-xl text-primary mb-2">Diana Villaveces</h4>
-<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-4">Propósito y Resiliencia</p>
-<p class="text-sm text-on-surface-variant italic px-4 leading-relaxed opacity-80">Guía de procesos de redescubrimiento personal y propósito de vida.</p>
-</div>
-<!-- Founder 2 -->
-<div class="text-center group founder-card">
-<div class="aspect-[4/5] rounded-2xl overflow-hidden mb-8 shadow-xl relative bg-surface">
-<img alt="Linda Mogollón" class="w-full h-full object-cover" src="Linda.png"/>
-</div>
-<h4 class="font-headline-lg text-xl text-primary mb-2">Linda Mogollón</h4>
-<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-4">Bienestar Consciente</p>
-<p class="text-sm text-on-surface-variant italic px-4 leading-relaxed opacity-80">Integra autocuidado con productividad consciente y balance diario.</p>
-</div>
-<!-- Founder 3 -->
-<div class="text-center group founder-card">
-<div class="aspect-[4/5] rounded-2xl overflow-hidden mb-8 shadow-xl relative bg-surface">
-<img alt="Diana Gutiérrez" class="w-full h-full object-cover" src="dianaG.png"/>
-</div>
-<h4 class="font-headline-lg text-xl text-primary mb-2">Diana Gutiérrez</h4>
-<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-4">Refugio en la Fe</p>
-<p class="text-sm text-on-surface-variant italic px-4 leading-relaxed opacity-80">Fortalece la conexión diaria con la palabra de Dios y guía espiritual.</p>
-</div>
-<!-- Founder 4 -->
-<div class="text-center group founder-card">
-<div class="aspect-[4/5] rounded-2xl overflow-hidden mb-8 shadow-xl relative bg-secondary/5 border border-outline-variant/20 flex items-center justify-center">
-<img alt="Marcela Sánchez" class="w-full h-full object-cover" src="marcela.png"/>
-</div>
-<h4 class="font-headline-lg text-xl text-primary mb-2">Marcela Sánchez</h4>
-<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-4">Nutrición Integral</p>
-<p class="text-sm text-on-surface-variant italic px-4 leading-relaxed opacity-80">Bienestar físico y hábitos que nutren el cuerpo desde el amor propio.</p>
-</div>
-</div>
-</div>
+
+
+<!-- =========================================
+     07 · FUNDADORAS
+========================================= -->
+
+<section
+    class="py-section-padding bg-background"
+    id="historia"
+>
+
+    <div class="max-w-container-max mx-auto px-6">
+
+
+        <div class="text-center mb-24">
+
+            <h2
+                class="font-headline-lg text-5xl mb-6"
+            >
+                Las Fundadoras
+            </h2>
+
+            <p
+                class="text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed"
+            >
+                Cuatro mujeres unidas por el propósito de crear un refugio
+                para el alma en el mundo moderno.
+            </p>
+
+        </div>
+
+
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12"
+        >
+
+
+            <div
+                class="text-center group founder-card"
+            >
+
+                <div
+                    class="aspect-[4/5] rounded-2xl overflow-hidden mb-8 shadow-xl relative bg-surface"
+                >
+
+                    <img
+                        alt="Diana Villaveces"
+                        class="w-full h-full object-cover"
+                        src="DianaV.jpg"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <h4
+                    class="font-headline-lg text-xl text-primary mb-2"
+                >
+                    Diana Villaveces
+                </h4>
+
+                <p
+                    class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-4"
+                >
+                    Propósito y Resiliencia
+                </p>
+
+                <p
+                    class="text-sm text-on-surface-variant italic px-4 leading-relaxed opacity-80"
+                >
+                    Guía de procesos de redescubrimiento personal y propósito de vida.
+                </p>
+
+            </div>
+
+
+            <div
+                class="text-center group founder-card"
+            >
+
+                <div
+                    class="aspect-[4/5] rounded-2xl overflow-hidden mb-8 shadow-xl relative bg-surface"
+                >
+
+                    <img
+                        alt="Linda Mogollón"
+                        class="w-full h-full object-cover"
+                        src="Linda.png"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <h4
+                    class="font-headline-lg text-xl text-primary mb-2"
+                >
+                    Linda Mogollón
+                </h4>
+
+                <p
+                    class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-4"
+                >
+                    Bienestar Consciente
+                </p>
+
+                <p
+                    class="text-sm text-on-surface-variant italic px-4 leading-relaxed opacity-80"
+                >
+                    Integra autocuidado con productividad consciente y balance diario.
+                </p>
+
+            </div>
+
+
+            <div
+                class="text-center group founder-card"
+            >
+
+                <div
+                    class="aspect-[4/5] rounded-2xl overflow-hidden mb-8 shadow-xl relative bg-surface"
+                >
+
+                    <img
+                        alt="Diana Gutiérrez"
+                        class="w-full h-full object-cover"
+                        src="dianaG.png"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <h4
+                    class="font-headline-lg text-xl text-primary mb-2"
+                >
+                    Diana Gutiérrez
+                </h4>
+
+                <p
+                    class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-4"
+                >
+                    Refugio en la Fe
+                </p>
+
+                <p
+                    class="text-sm text-on-surface-variant italic px-4 leading-relaxed opacity-80"
+                >
+                    Fortalece la conexión diaria con la palabra de Dios y guía espiritual.
+                </p>
+
+            </div>
+
+
+            <div
+                class="text-center group founder-card"
+            >
+
+                <div
+                    class="aspect-[4/5] rounded-2xl overflow-hidden mb-8 shadow-xl relative bg-secondary/5 border border-outline-variant/20 flex items-center justify-center"
+                >
+
+                    <img
+                        alt="Marcela Sánchez"
+                        class="w-full h-full object-cover"
+                        src="marcela.png"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <h4
+                    class="font-headline-lg text-xl text-primary mb-2"
+                >
+                    Marcela Sánchez
+                </h4>
+
+                <p
+                    class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-4"
+                >
+                    Nutrición Integral
+                </p>
+
+                <p
+                    class="text-sm text-on-surface-variant italic px-4 leading-relaxed opacity-80"
+                >
+                    Bienestar físico y hábitos que nutren el cuerpo desde el amor propio.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
-<!-- 08 · TESTIMONIOS -->
-<section class="py-32 bg-surface-variant/30">
-<div class="max-w-container-max mx-auto px-6 transition-all duration-1000 opacity-0 translate-y-12 opacity-100 translate-y-0">
-<h2 class="font-headline-lg text-4xl text-center mb-24">Lo que dicen nuestras usuarias</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-<div class="bg-surface p-14 rounded-2xl soft-card-shadow relative overflow-hidden">
-<span class="material-symbols-outlined absolute -top-4 -right-4 text-9xl text-primary/5 select-none">format_quote</span>
-<p class="text-xl italic font-body-italic text-on-surface-variant mb-10 leading-relaxed relative z-10">"Nunca había tenido un diario que me hiciera sentir tan acompañada. Es como si alguien entendiera exactamente lo que necesitaba escuchar."</p>
-<div class="flex items-center gap-5 relative z-10">
-<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-lg shadow-inner">M</div>
-<div>
-<p class="font-bold text-base text-on-surface">Mariana</p>
-<p class="text-[11px] text-on-surface-variant uppercase tracking-widest font-semibold opacity-70">34 años</p>
-</div>
-</div>
-</div>
-<div class="bg-surface p-14 rounded-2xl soft-card-shadow relative overflow-hidden">
-<span class="material-symbols-outlined absolute -top-4 -right-4 text-9xl text-primary/5 select-none">format_quote</span>
-<p class="text-xl italic font-body-italic text-on-surface-variant mb-10 leading-relaxed relative z-10">"En solo 30 días noté un cambio real en cómo me hablo a mí misma. Este journal me ayudó a sanar cosas que no sabía que cargaba."</p>
-<div class="flex items-center gap-5 relative z-10">
-<div class="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center font-bold text-secondary text-lg shadow-inner">C</div>
-<div>
-<p class="font-bold text-base text-on-surface">Carolina</p>
-<p class="text-[11px] text-on-surface-variant uppercase tracking-widest font-semibold opacity-70">41 años</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+
+<!-- =========================================
+     08 · TESTIMONIOS
+========================================= -->
+
+<section
+    class="py-32 bg-surface-variant/30"
+>
+
+    <div class="max-w-container-max mx-auto px-6">
+
+        <h2
+            class="font-headline-lg text-4xl text-center mb-24"
+        >
+            Lo que dicen nuestras usuarias
+        </h2>
+
+
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-12"
+        >
+
+            <div
+                class="bg-surface p-14 rounded-2xl soft-card-shadow relative overflow-hidden"
+            >
+
+                <span
+                    class="material-symbols-outlined absolute -top-4 -right-4 text-9xl text-primary/5 select-none"
+                >
+                    format_quote
+                </span>
+
+
+                <p
+                    class="text-xl italic font-body-italic text-on-surface-variant mb-10 leading-relaxed relative z-10"
+                >
+                    "Nunca había tenido un diario que me hiciera sentir tan acompañada.
+                    Es como si alguien entendiera exactamente lo que necesitaba escuchar."
+                </p>
+
+
+                <div
+                    class="flex items-center gap-5 relative z-10"
+                >
+
+                    <div
+                        class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-lg shadow-inner"
+                    >
+                        M
+                    </div>
+
+
+                    <div>
+
+                        <p
+                            class="font-bold text-base text-on-surface"
+                        >
+                            Mariana
+                        </p>
+
+                        <p
+                            class="text-[11px] text-on-surface-variant uppercase tracking-widest font-semibold opacity-70"
+                        >
+                            34 años
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="bg-surface p-14 rounded-2xl soft-card-shadow relative overflow-hidden"
+            >
+
+                <span
+                    class="material-symbols-outlined absolute -top-4 -right-4 text-9xl text-primary/5 select-none"
+                >
+                    format_quote
+                </span>
+
+
+                <p
+                    class="text-xl italic font-body-italic text-on-surface-variant mb-10 leading-relaxed relative z-10"
+                >
+                    "En solo 30 días noté un cambio real en cómo me hablo a mí misma.
+                    Este journal me ayudó a sanar cosas que no sabía que cargaba."
+                </p>
+
+
+                <div
+                    class="flex items-center gap-5 relative z-10"
+                >
+
+                    <div
+                        class="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center font-bold text-secondary text-lg shadow-inner"
+                    >
+                        C
+                    </div>
+
+
+                    <div>
+
+                        <p
+                            class="font-bold text-base text-on-surface"
+                        >
+                            Carolina
+                        </p>
+
+                        <p
+                            class="text-[11px] text-on-surface-variant uppercase tracking-widest font-semibold opacity-70"
+                        >
+                            41 años
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
-<!-- 09 · CTA FINAL -->
-<section class="py-40 bg-surface text-center">
-<div class="max-w-4xl mx-auto px-6 space-y-14 transition-all duration-1000 opacity-0 translate-y-12 opacity-100 translate-y-0">
-<h2 class="font-headline-xl text-5xl md:text-6xl text-on-surface leading-[1.15]">Tu transformación empieza <br/>con una página.</h2>
-<p class="text-2xl text-on-surface-variant italic font-body-italic opacity-80">90 días. 6 pilares. Una versión más plena de ti.</p>
-<div class="flex flex-col sm:flex-row gap-8 justify-center pt-6">
-<button class="bg-brand-purple text-white px-12 py-6 rounded-full font-bold text-[11px] uppercase tracking-[0.25em] hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-primary/30">
+
+
+<!-- =========================================
+     09 · CTA FINAL
+========================================= -->
+
+<section
+    class="py-40 bg-surface text-center"
+>
+
+    <div
+        class="max-w-4xl mx-auto px-6 space-y-14"
+    >
+
+        <h2
+            class="font-headline-xl text-5xl md:text-6xl text-on-surface leading-[1.15]"
+        >
+            Tu transformación empieza
+            <br>
+            con una página.
+        </h2>
+
+
+        <p
+            class="text-2xl text-on-surface-variant italic font-body-italic opacity-80"
+        >
+            90 días. 6 pilares. Una versión más plena de ti.
+        </p>
+
+
+        <div
+            class="flex flex-col sm:flex-row gap-8 justify-center pt-6"
+        >
+
+            <button
+                class="bg-brand-purple text-white px-12 py-6 rounded-full font-bold text-[11px] uppercase tracking-[0.25em] hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-primary/30"
+                type="button"
+            >
                 Empieza hoy tu transformación
             </button>
-<a href="#tienda" class="inline-block border border-outline px-12 py-6 rounded-full font-bold text-[11px] uppercase tracking-[0.25em] hover:bg-surface-variant hover:-translate-y-1 transition-all">
+
+
+            <a
+                href="#tienda"
+                class="inline-block border border-outline px-12 py-6 rounded-full font-bold text-[11px] uppercase tracking-[0.25em] hover:bg-surface-variant hover:-translate-y-1 transition-all"
+            >
                 Conoce nuestros productos
             </a>
-</div>
-<div class="pt-16 flex flex-wrap justify-center gap-16 text-on-surface-variant/40">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-xl">verified_user</span>
-<span class="text-[10px] font-bold uppercase tracking-[0.2em]">Pago Seguro</span>
-</div>
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-xl">local_shipping</span>
-<span class="text-[10px] font-bold uppercase tracking-[0.2em]">Envíos nacionales</span>
-</div>
-</div>
-</div>
+
+        </div>
+
+
+        <div
+            class="pt-16 flex flex-wrap justify-center gap-16 text-on-surface-variant/40"
+        >
+
+            <div class="flex items-center gap-3">
+
+                <span class="material-symbols-outlined text-xl">
+                    verified_user
+                </span>
+
+                <span
+                    class="text-[10px] font-bold uppercase tracking-[0.2em]"
+                >
+                    Pago Seguro
+                </span>
+
+            </div>
+
+
+            <div class="flex items-center gap-3">
+
+                <span class="material-symbols-outlined text-xl">
+                    local_shipping
+                </span>
+
+                <span
+                    class="text-[10px] font-bold uppercase tracking-[0.2em]"
+                >
+                    Envíos nacionales
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
-<!-- 10 · FOOTER -->
-<footer class="py-24 border-t border-outline-variant/10" style="background-color: #5e5e91;">
-<div class="max-w-container-max mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-20">
-<div class="space-y-8">
-<a class="inline-flex" href="#"><img alt="Fuel4Soul" class="h-12 md:h-16 w-auto object-contain" src="Logo Fondo morado.png"/></a>
-<p class="text-[11px] text-white/80 leading-relaxed uppercase tracking-[0.2em] font-bold">Small Steps. Deep Transformation.</p>
-<div class="flex gap-6 text-white/50">
-<a class="hover:text-white transition-colors transform hover:scale-110" href="#"><span class="material-symbols-outlined text-2xl">share</span></a>
-<a class="hover:text-white transition-colors transform hover:scale-110" href="#"><span class="material-symbols-outlined text-2xl">camera_alt</span></a>
-</div>
-</div>
-<div>
-<h4 class="font-bold text-[11px] uppercase tracking-[0.3em] text-white mb-10">Navegación</h4>
-<ul class="space-y-5 text-sm font-semibold text-white/80">
-<li class=""><a class="hover:text-white hover:pl-2 transition-all" href="#inicio">Inicio</a></li>
-<li class=""><a class="hover:text-white hover:pl-2 transition-all" href="#tienda">Tienda</a></li>
-<li class=""><a class="hover:text-white hover:pl-2 transition-all" href="#mision">Nuestra Misión</a></li>
-<li class=""><a class="hover:text-white hover:pl-2 transition-all" href="#historia">Nuestra Historia</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-bold text-[11px] uppercase tracking-[0.3em] text-white mb-10">Contacto</h4>
-<ul class="space-y-5 text-sm font-semibold text-white/80">
-<li class="opacity-80 hover:text-white transition-colors cursor-default">fuel4soul.us@gmail.com</li>
-<li class="opacity-80 hover:text-white transition-colors cursor-default">Florida, Estados Unidos</li>
-</ul>
-</div>
-<div>
-<h4 class="font-bold text-[11px] uppercase tracking-[0.3em] text-white mb-10">Newsletter</h4>
-<div class="flex border-b-2 border-outline-variant/30 pb-3 mb-10 focus-within:border-primary transition-colors">
-<input class="bg-transparent border-none text-sm w-full text-white/80 focus:ring-0 placeholder:text-white/50 placeholder:opacity-100 font-medium px-0" placeholder="Tu email" type="email"/>
-<button class="material-symbols-outlined text-white hover:translate-x-2 transition-transform">arrow_forward</button>
-</div>
-<p class="text-[10px] text-white/50 uppercase tracking-[0.2em] font-bold">© 2024 Fuel4Soul. All Rights Reserved.</p>
-</div>
-</div>
+
+
+<!-- =========================================
+     10 · FOOTER
+========================================= -->
+
+<footer
+    class="py-24 border-t border-outline-variant/10"
+    style="background-color:#5e5e91;"
+    id="contacto"
+>
+
+    <div
+        class="max-w-container-max mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-20"
+    >
+
+
+        <div class="space-y-8">
+
+            <a
+                class="inline-flex"
+                href="#inicio"
+            >
+
+                <img
+                    alt="Fuel4Soul"
+                    class="h-12 md:h-16 w-auto object-contain"
+                    src="Logo Fondo morado.png"
+                >
+
+            </a>
+
+
+            <p
+                class="text-[11px] text-white/80 leading-relaxed uppercase tracking-[0.2em] font-bold"
+            >
+                Small Steps. Deep Transformation.
+            </p>
+
+
+            <div
+                class="flex gap-6 text-white/50"
+            >
+
+                <a
+                    class="hover:text-white transition-colors transform hover:scale-110"
+                    href="#"
+                >
+
+                    <span class="material-symbols-outlined text-2xl">
+                        share
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="hover:text-white transition-colors transform hover:scale-110"
+                    href="#"
+                >
+
+                    <span class="material-symbols-outlined text-2xl">
+                        camera_alt
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <h4
+                class="font-bold text-[11px] uppercase tracking-[0.3em] text-white mb-10"
+            >
+                Navegación
+            </h4>
+
+
+            <ul
+                class="space-y-5 text-sm font-semibold text-white/80"
+            >
+
+                <li>
+                    <a
+                        class="hover:text-white hover:pl-2 transition-all"
+                        href="#inicio"
+                    >
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="hover:text-white hover:pl-2 transition-all"
+                        href="#tienda"
+                    >
+                        Tienda
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="hover:text-white hover:pl-2 transition-all"
+                        href="#mision"
+                    >
+                        Nuestra Misión
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        class="hover:text-white hover:pl-2 transition-all"
+                        href="#historia"
+                    >
+                        Nuestra Historia
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h4
+                class="font-bold text-[11px] uppercase tracking-[0.3em] text-white mb-10"
+            >
+                Contacto
+            </h4>
+
+
+            <ul
+                class="space-y-5 text-sm font-semibold text-white/80"
+            >
+
+                <li>
+                    fuel4soul.us@gmail.com
+                </li>
+
+                <li>
+                    Florida, Estados Unidos
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h4
+                class="font-bold text-[11px] uppercase tracking-[0.3em] text-white mb-10"
+            >
+                Newsletter
+            </h4>
+
+
+            <div
+                class="flex border-b-2 border-outline-variant/30 pb-3 mb-10 focus-within:border-primary transition-colors"
+            >
+
+                <input
+                    class="bg-transparent border-none text-sm w-full text-white/80 focus:ring-0 placeholder:text-white/50 placeholder:opacity-100 font-medium px-0"
+                    placeholder="Tu email"
+                    type="email"
+                >
+
+
+                <button
+                    class="material-symbols-outlined text-white hover:translate-x-2 transition-transform"
+                    type="button"
+                >
+                    arrow_forward
+                </button>
+
+            </div>
+
+
+            <p
+                class="text-[10px] text-white/50 uppercase tracking-[0.2em] font-bold"
+            >
+                © 2024 Fuel4Soul. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+
 </footer>
+
+
 <script>
-    const navShell = document.querySelector('.nav-shell');
 
-    function updateNavFixedState() {
-        if (!navShell) return;
-        if (window.scrollY > 20) {
-            navShell.classList.add('is-fixed');
-        } else {
-            navShell.classList.remove('is-fixed');
+/* =========================================
+   NAVBAR
+========================================= */
+
+const navShell =
+    document.querySelector(".nav-shell");
+
+
+function updateNavFixedState() {
+
+    if (!navShell) return;
+
+    if (window.scrollY > 20) {
+
+        navShell.classList.add("is-fixed");
+
+    } else {
+
+        navShell.classList.remove("is-fixed");
+
+    }
+}
+
+
+window.addEventListener(
+    "scroll",
+    updateNavFixedState,
+    { passive: true }
+);
+
+updateNavFixedState();
+
+
+/* =========================================
+   REVEAL ANIMATIONS
+========================================= */
+
+const revealObserver =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add(
+                        "is-visible"
+                    );
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12,
+            rootMargin:
+                "0px 0px -60px 0px"
         }
+    );
+
+
+const revealTargets =
+    document.querySelectorAll(
+        "section > div, .founder-card, .bg-surface.rounded-2xl, .soft-card-shadow, .hero-logo"
+    );
+
+
+revealTargets.forEach(
+    (element, index) => {
+
+        element.classList.add(
+            "reveal-animate"
+        );
+
+        element.style.transitionDelay =
+            (index * 80) + "ms";
+
+        revealObserver.observe(
+            element
+        );
+
+    }
+);
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+const mobileMenuToggle =
+    document.querySelector(
+        ".mobile-menu-toggle"
+    );
+
+const mobileMenuClose =
+    document.querySelector(
+        ".mobile-menu-close"
+    );
+
+const mobileMenuPanel =
+    document.querySelector(
+        ".mobile-menu-panel"
+    );
+
+const mobileMenuOverlay =
+    document.querySelector(
+        ".mobile-menu-overlay"
+    );
+
+
+function toggleMobileMenu(forceOpen) {
+
+    if (!mobileMenuPanel) return;
+
+    const shouldOpen =
+        typeof forceOpen === "boolean"
+            ? forceOpen
+            : !mobileMenuPanel.classList.contains(
+                "is-open"
+            );
+
+
+    mobileMenuPanel.classList.toggle(
+        "is-open",
+        shouldOpen
+    );
+
+
+    mobileMenuOverlay?.classList.toggle(
+        "is-visible",
+        shouldOpen
+    );
+
+
+    document.body.classList.toggle(
+        "overflow-hidden",
+        shouldOpen
+    );
+
+
+    if (mobileMenuToggle) {
+
+        mobileMenuToggle.setAttribute(
+            "aria-expanded",
+            String(shouldOpen)
+        );
+
     }
 
-    window.addEventListener('scroll', updateNavFixedState, { passive: true });
-    updateNavFixedState();
+}
 
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                revealObserver.unobserve(entry.target);
-            }
+
+mobileMenuToggle?.addEventListener(
+    "click",
+    () => toggleMobileMenu()
+);
+
+
+mobileMenuClose?.addEventListener(
+    "click",
+    () => toggleMobileMenu(false)
+);
+
+
+mobileMenuOverlay?.addEventListener(
+    "click",
+    () => toggleMobileMenu(false)
+);
+
+
+mobileMenuPanel
+    ?.querySelectorAll("a")
+    .forEach((link) => {
+
+        link.addEventListener(
+            "click",
+            () => toggleMobileMenu(false)
+        );
+
+    });
+
+
+/* =========================================
+   PRODUCT CAROUSEL
+========================================= */
+
+const productTrack =
+    document.getElementById(
+        "productTrack"
+    );
+
+const productPrev =
+    document.getElementById(
+        "productPrev"
+    );
+
+const productNext =
+    document.getElementById(
+        "productNext"
+    );
+
+const productDots =
+    document.querySelectorAll(
+        ".product-dot"
+    );
+
+const productProgress =
+    document.getElementById(
+        "productProgress"
+    );
+
+const productCarousel =
+    document.getElementById(
+        "productCarousel"
+    );
+
+
+let currentProduct = 0;
+
+let productTimer = null;
+
+const totalProducts = 4;
+
+const autoChangeTime = 15000;
+
+
+/* CAMBIAR PRODUCTO */
+
+function updateProductCarousel(
+    index,
+    restartTimer = true
+) {
+
+    currentProduct =
+        (index + totalProducts)
+        % totalProducts;
+
+
+    if (productTrack) {
+
+        productTrack.style.transform =
+            "translateX(-" +
+            (currentProduct * 100) +
+            "%)";
+    }
+
+
+    productDots.forEach(
+        (dot, dotIndex) => {
+
+            dot.classList.toggle(
+                "active",
+                dotIndex === currentProduct
+            );
+
+        }
+    );
+
+
+    if (restartTimer) {
+
+        resetProductTimer();
+
+    }
+
+}
+
+
+/* BARRA DE PROGRESO */
+
+function startProductProgress() {
+
+    if (!productProgress) return;
+
+
+    productProgress.style.transition =
+        "none";
+
+    productProgress.style.width =
+        "0%";
+
+
+    requestAnimationFrame(() => {
+
+        requestAnimationFrame(() => {
+
+            productProgress.style.transition =
+                "width 15s linear";
+
+            productProgress.style.width =
+                "100%";
+
         });
-    }, {
-        threshold: 0.12,
-        rootMargin: '0px 0px -60px 0px'
+
     });
 
-    const revealTargets = document.querySelectorAll('section > div, .founder-card, .bg-surface.rounded-2xl, .bg-surface-variant\/20, .soft-card-shadow, .hero-logo');
+}
 
-    revealTargets.forEach((el, index) => {
-        el.classList.add('reveal-animate');
-        el.style.transitionDelay = (index * 80) + 'ms';
-        revealObserver.observe(el);
-    });
 
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileMenuClose = document.querySelector('.mobile-menu-close');
-    const mobileMenuPanel = document.querySelector('.mobile-menu-panel');
-    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+/* REINICIAR TEMPORIZADOR */
 
-    function toggleMobileMenu(forceOpen) {
-        const shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : !mobileMenuPanel.classList.contains('is-open');
-        mobileMenuPanel.classList.toggle('is-open', shouldOpen);
-        mobileMenuOverlay.classList.toggle('is-visible', shouldOpen);
-        document.body.classList.toggle('overflow-hidden', shouldOpen);
-        if (mobileMenuToggle) {
-            mobileMenuToggle.setAttribute('aria-expanded', String(shouldOpen));
-        }
+function resetProductTimer() {
+
+    clearTimeout(productTimer);
+
+    startProductProgress();
+
+
+    productTimer = setTimeout(
+        () => {
+
+            updateProductCarousel(
+                currentProduct + 1,
+                false
+            );
+
+            resetProductTimer();
+
+        },
+        autoChangeTime
+    );
+
+}
+
+
+/* FLECHA SIGUIENTE */
+
+productNext?.addEventListener(
+    "click",
+    () => {
+
+        updateProductCarousel(
+            currentProduct + 1
+        );
+
     }
+);
 
-    mobileMenuToggle?.addEventListener('click', () => toggleMobileMenu());
-    mobileMenuClose?.addEventListener('click', () => toggleMobileMenu(false));
-    mobileMenuOverlay?.addEventListener('click', () => toggleMobileMenu(false));
-    mobileMenuPanel?.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => toggleMobileMenu(false));
-    });
+
+/* FLECHA ANTERIOR */
+
+productPrev?.addEventListener(
+    "click",
+    () => {
+
+        updateProductCarousel(
+            currentProduct - 1
+        );
+
+    }
+);
+
+
+/* DOTS */
+
+productDots.forEach(
+    (dot, index) => {
+
+        dot.addEventListener(
+            "click",
+            () => {
+
+                updateProductCarousel(
+                    index
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================
+   PAUSAR AL PASAR EL MOUSE
+========================================= */
+
+productCarousel?.addEventListener(
+    "mouseenter",
+    () => {
+
+        clearTimeout(
+            productTimer
+        );
+
+        if (productProgress) {
+
+            productProgress.style.transition =
+                "none";
+
+        }
+
+    }
+);
+
+
+productCarousel?.addEventListener(
+    "mouseleave",
+    () => {
+
+        resetProductTimer();
+
+    }
+);
+
+
+/* =========================================
+   SWIPE EN MÓVIL
+========================================= */
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+
+productCarousel?.addEventListener(
+    "touchstart",
+    (event) => {
+
+        touchStartX =
+            event.changedTouches[0].screenX;
+
+    },
+    { passive: true }
+);
+
+
+productCarousel?.addEventListener(
+    "touchend",
+    (event) => {
+
+        touchEndX =
+            event.changedTouches[0].screenX;
+
+
+        const difference =
+            touchStartX - touchEndX;
+
+
+        if (Math.abs(difference) < 50) {
+
+            return;
+
+        }
+
+
+        if (difference > 0) {
+
+            updateProductCarousel(
+                currentProduct + 1
+            );
+
+        } else {
+
+            updateProductCarousel(
+                currentProduct - 1
+            );
+
+        }
+
+    },
+    { passive: true }
+);
+
+
+/* =========================================
+   INICIAR CARRUSEL
+========================================= */
+
+updateProductCarousel(
+    0
+);
+
 </script>
-</body></html>
+
+</body>
+</html>
